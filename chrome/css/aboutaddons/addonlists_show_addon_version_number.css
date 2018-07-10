@@ -1,0 +1,16 @@
+/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+
+@-moz-document url-prefix(chrome://mozapps/content/extensions/extensions.xul), url-prefix(about:addons) {
+	
+	.addon:not([pending="uninstall"])[status="installed"]	{
+	  -moz-binding: url("./addonlists_show_addon_version_number.xml#addon-generic") !important;
+	}
+	
+	.addon:not([pending="uninstall"])[status="installed"] .name-container .version {
+	  visibility: visible !important;
+	}
+	
+}

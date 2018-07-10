@@ -1,0 +1,84 @@
+/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+
+/****************************************************************************************/
+/* multirow / multiple tab lines - modified for CustomCSSforFx **************************/
+/* all credits go to the original author: ***********************************************/
+/* https://www.reddit.com/r/FirefoxCSS/comments/7dclp7/multirow_tabs_in_ff57/ ***********/
+/****************************************************************************************/
+
+
+:root {
+  --tabs-lines: 3; /* 3 rows, increase for more */
+  --tab_min_width_mlt: 80px;
+  --tab_max_width_mlt: 200px;
+  --tab-min-height_mlt: var(--tab-min-height,32px);
+}
+
+.tabbrowser-tab[fadein]:not([pinned]) {
+  flex-grow: 1;
+  min-width: var(--tab_min_width_mlt) !important;
+  max-width: var(--tab_max_width_mlt) !important;
+}
+
+.tabbrowser-tab,.tab-background {
+  min-height: var(--tab-min-height_mlt);
+}
+
+.tabs-newtab-button {
+  vertical-align: bottom !important;
+  height: var(--tab-min-height_mlt);
+}
+
+.tab-stack {
+  width: 100%;
+}
+
+#tabbrowser-tabs .scrollbox-innerbox {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: collapse !important;
+  overflow-y: auto !important;
+  min-height: var(--tab-min-height_mlt);
+  max-height: calc( var(--tabs-lines) * var(--tab-min-height_mlt) ) !important;
+}
+
+#tabbrowser-tabs .arrowscrollbox-scrollbox {
+  overflow-x: collapse;
+  overflow: visible; 
+  display: block;
+}
+
+#tabbrowser-tabs .scrollbutton-up,
+#tabbrowser-tabs .scrollbutton-down,
+#TabsToolbar #alltabs-button,
+.tabbrowser-tab:not([fadein]){
+  display: none;
+}
+
+#main-window[tabsintitlebar] #tabbrowser-tabs {
+  -moz-window-dragging: no-drag !important;
+}
+
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]),
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:not([collapsed]) {
+  opacity: 0 !important;
+}
+
+#tabbrowser-tabs * {
+  overflow-x: none !important;
+}
+
+#main-window[customizing] #tabbrowser-tabs .scrollbox-innerbox {
+  display: block !important;
+}
+
+#tabbrowser-tabs .scrollbox-innerbox {
+  -moz-padding-end: 4px !important;
+}
+
+#TabsToolbar[currentset^="tabbrowser-tabs,new-tab-button"] #tabbrowser-tabs .scrollbox-innerbox {
+  -moz-padding-end: 0px !important;
+}

@@ -1,0 +1,12 @@
+/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+.searchbar-textbox, #urlbar {
+  background-color: black !important;
+  color: lightgrey !important;
+}
+
+#identity-icon{
+  opacity: 1 !important;
+}

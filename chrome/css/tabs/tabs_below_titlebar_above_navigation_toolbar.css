@@ -1,0 +1,27 @@
+/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+
+#main-window[tabsintitlebar][sizemode="normal"] #TabsToolbar,
+#main-window[uidensity=compact][tabsintitlebar][sizemode="normal"] #TabsToolbar{
+  -moz-padding-start: 2px !important;
+  margin-top: 3px !important;
+}
+
+#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="false"] ~ #TabsToolbar,
+#main-window[uidensity=compact][tabsintitlebar][sizemode="maximized"] #toolbar-menubar[autohide="false"] ~ #TabsToolbar,
+#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar:not([inactive="true"]) ~ #TabsToolbar,
+#main-window[uidensity=compact][tabsintitlebar][sizemode="maximized"] #toolbar-menubar:not([inactive="true"]) ~ #TabsToolbar{
+  margin-top: 3px !important;
+}
+
+#main-window[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar,
+#main-window[uidensity=compact][tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive="true"] ~ #TabsToolbar{
+  -moz-padding-start: 2px !important;
+  margin-top: 19px !important;
+}
+
+#main-window[tabsintitlebar][sizemode="normal"] #TabsToolbar .titlebar-placeholder[type="caption-buttons"]{
+  display: none !important;
+}
